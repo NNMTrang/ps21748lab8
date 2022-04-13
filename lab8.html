@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lab.css">
+    <script src="angular.min.js"></script>
+</head>
+<body ng-app="b1">
+    <form name="frm" class="col-5 mx-auto border border-primary" >
+        <h2>Đăng Kí Thành viên</h2>
+        <div  class="form-group">
+            <label>Mã sinh viên</label><br>
+            <input name="msv" class="form-control bg-primary" ng-model="masv"required  maxlength="10">
+    <em ng-if="frm.masv.$invaid" class="text-danger h6"></em>
+        </div  class="form-group">
+        <div>
+            <label>Họ và tên</label><br>
+            <input name="ten" class="form-control bg-primary" ng-model="ten"required  maxlength="30">
+    <em ng-if="frm.ten.$invaid" class="text-danger h6">Nhập họ ten tối đa 30 ký tự</em>
+        </div>
+        <div  class="form-group">
+            <label> Email</label>
+            <input type="email"  name="email" class="form-control bg-primary" ng-model="email"required  maxlength="30">
+            <em ng-if="frm.email.$invaid" class="text-danger h6">nhập email</em>
+        </div>
+        <!-- <div  class="form-group"> -->
+            <div>
+            <fieldset class="border border-secondary p-3">
+                <legend>Giới tính</legend>
+                <!-- <input type="radio" name="gender" value="nam"/> <label>nam</label>  -->
+                <!-- <input type="radio"  name="gender" value="NỮ"/> <label> nu</label> <br> -->
+                <input type="radio" name="gender" class="form-control1 bg-primary" ng-model="gender"required >
+                <em ng-if="frm.gender.$invaid" class="text-danger h6">nam</em>
+                <input type="radio" name="gender" class="form-control1 bg-primary" ng-model="gender"required >
+                <em ng-if="frm.gender.$invaid" class="text-danger h6">nữ</em>
+ 
+            </fieldset>
+        </div>
+        <!-- <div class="form-group"> -->
+            <div>
+            <fieldset class="border border-secondary p-3">
+               <legend >Sở thích</legend>
+               <input type="checkbox" name="st" value="docsach"><label>đọc sách</label>&nbsp;
+               <input type="checkbox" name="st"value="dulich"><label>du lịch</label>&nbsp;
+               <input type="checkbox" name="st"value="amthuc"><label>ẩm thực</label>&nbsp;
+               <input type="checkbox" name="st"value="amnhac"><label>âm nhạc</label>&nbsp;
+               <input type="checkbox" name="st"value="khac"><label>khác</label>
+               <em ng-if="!docsach && !dulich && !amthuc && !amnhac && !khac " class="text-
+               danger h6"><br></em>
+            </fieldset>
+        </div>
+        <div>
+            <label>Quốc tịch</label><br>
+            <select class="qt"  name="qt" class="form-control bg-primary" ng-model="qt"required >
+                <em ng-if="frm.qt.$invaid" class="text-danger h6"></em>>
+               <option value="">Chọn quốc gia</option>
+               <option value="Việt Nam">Việt Nam</option>
+               <option value="Lào">Lào</option>
+               <option value="Campuchia">Campuchia</option>
+           </select>
+        </div>
+        <div>
+            <label>Ghi chú</label>
+            <br>
+            <textarea class="tt" cols="50" rows="10"></textarea>
+        </div>
+        <button class="btn btn-info">ĐĂNG KÍ</button>
+    </form>
+</body>
+</html>
